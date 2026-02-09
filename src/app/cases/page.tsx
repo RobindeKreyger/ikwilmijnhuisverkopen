@@ -1,26 +1,4 @@
-const cases = [
-  {
-    id: "case-v-001",
-    title: "Gezinswoning in Gent",
-    status: "Actief",
-    valuation: "€ 435.000",
-    nextStep: "Takenpakket afronden",
-  },
-  {
-    id: "case-v-002",
-    title: "Rijwoning in Mechelen",
-    status: "Setup",
-    valuation: "€ 312.000",
-    nextStep: "Externe schatting invoeren",
-  },
-  {
-    id: "case-v-003",
-    title: "Appartement in Leuven",
-    status: "Biedingen",
-    valuation: "€ 389.000",
-    nextStep: "Biedingen vergelijken",
-  },
-];
+import { cases } from "./data";
 
 export default function CasesPage() {
   return (

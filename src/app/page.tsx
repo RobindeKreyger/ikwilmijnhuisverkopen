@@ -21,6 +21,12 @@ export default function HomePage() {
             Start nieuw verkoopdossier
           </a>
           <a
+            href="/mvp"
+            className="rounded-full border border-brand px-6 py-3 text-sm font-semibold text-brand"
+          >
+            MVP one-pager
+          </a>
+          <a
             href="/cases"
             className="rounded-full border border-slate-200 px-6 py-3 text-sm font-semibold text-slate-700"
           >
