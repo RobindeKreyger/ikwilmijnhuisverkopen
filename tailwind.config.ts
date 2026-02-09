@@ -6,7 +6,6 @@ const config: Config = {
     extend: {
       colors: {
         ink: "#0f172a",
-        slate: "#0f172a",
         brand: "#1d4ed8",
         accent: "#f97316",
       },
