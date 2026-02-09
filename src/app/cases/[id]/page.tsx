@@ -1,3 +1,7 @@
+import { notFound } from "next/navigation";
+
+import { cases } from "../data";
+
 const tabs = [
   "Waardeschatting",
   "Taken & checklist",
@@ -9,20 +13,36 @@ const tabs = [
   "Export",
 ];
 
-export default function CaseDetailPage() {
+export const dynamicParams = false;
+
+export function generateStaticParams() {
+  return cases.map((saleCase) => ({ id: saleCase.id }));
+}
+
+type CaseDetailPageProps = {
+  params: { id: string };
+};
+
+export default function CaseDetailPage({ params }: CaseDetailPageProps) {
+  const saleCase = cases.find((item) => item.id === params.id);
+
+  if (!saleCase) {
+    notFound();
+  }
+
   return (
     <section className="space-y-8">
       <header className="space-y-3">
         <p className="text-sm font-semibold uppercase text-brand">Dossier</p>
         <h1 className="text-3xl font-semibold text-slate-900">
-          Gezinswoning in Gent
+          {saleCase.title}
         </h1>
         <div className="flex flex-wrap gap-3 text-sm text-slate-600">
           <span className="rounded-full bg-slate-100 px-3 py-1 font-semibold text-slate-600">
-            Status: Actief
+            Status: {saleCase.status}
           </span>
-          <span>Laatste update: 12 juli 2024</span>
-          <span>Dossierfee: € 1.250</span>
+          <span>Laatste update: {saleCase.lastUpdate}</span>
+          <span>Dossierfee: {saleCase.dossierFee}</span>
         </div>
       </header>
 
