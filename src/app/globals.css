@@ -11,5 +11,5 @@ body {
 }
 
 a {
-  @apply text-brand hover:text-brand/80;
+  @apply text-brand transition hover:text-brand/80;
 }
